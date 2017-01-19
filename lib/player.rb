@@ -1,8 +1,14 @@
 class Player
-  attr_reader :name
+  attr_reader :name, :hit_points
+  DEFAULT_HP = 20
 
   def initialize(name)
     @name = name
+    @hit_points = DEFAULT_HP
   end
-  
+
+  def attacked
+    @hit_points -= 10
+  end
+
 end

@@ -21,12 +21,12 @@ enable :sessions
     @name1 = $player1.name
     @name2 = $player2.name
     @attack = session[:attack]
-    @hit_points = 20
     @confirmation ="#{@name1} attacks #{@name2}"
     erb :names
   end
 
   post '/attack' do
+    $player2.attacked
     session[:attack] = true
     redirect "/play"
   end
