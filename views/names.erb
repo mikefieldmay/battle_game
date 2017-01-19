@@ -1,11 +1,21 @@
 <% if @game.player1.name && @game.player2.name %>
-<h1>First player: <%=@game.player1.name%>; second player: <%=@game.player2.name%></h1>
-<h1><%=@game.player1.name%> HP: <%=@game.player1.hit_points%>, <%=@game.player2.name%> HP: <%=@game.player2.hit_points%> </h1>
-<!-- <button type="button" onclick="<%=@confirmation%>">Attack</button> -->
+
+<div align="center">
+<h1><%=@game.player1.name%> vs <%=@game.player2.name%></h1>
+<h2><%=@game.current_player.name%>'s turn</h2>
+<% if @game.attacked == true %>
+<h2><%=@game.player1.name%> attacked <%=@game.player2.name%></h2>
+<% end %>
 <form action="/attack" method="post">
   <input type = "submit" value = "Attack!"/>
 </form>
-  <% if @game.attacked == true %>
-  <h2><%=@game.player1.name%> attacked <%=@game.player2.name%></h2>
-  <% end %>
+</div>
+
+<div align="left">
+<h1><%=@game.player1.name%> HP: <%=@game.player1.hit_points%></h1>
+</div>
+
+<div align="right">
+<h1><%=@game.player2.name%> HP: <%=@game.player2.hit_points%> </h1>
+</div>
 <% end %>

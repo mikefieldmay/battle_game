@@ -6,19 +6,18 @@ RSpec.feature "Capybara feature test" do
 
     sign_in_and_play
 
-    expect(page).to have_content "First player: Kate; second player: Konrad"
+    expect(page).to have_content "Kate vs Konrad"
   end
   scenario "so players can see their Hit Points" do
 
     sign_in_and_play
 
-    expect(page).to have_content "Kate HP: 20, Konrad HP: 20"
+    expect(page).to have_content "Kate HP: 20 Konrad HP: 20"
   end
   scenario "players can launch an attack" do
 
     attack
     expect(page).to have_content "Kate attacked Konrad"
-
   end
 
   scenario "attacks cause 10HP damage" do
