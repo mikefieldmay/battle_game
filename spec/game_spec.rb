@@ -18,7 +18,7 @@ describe Game do
     end
 
     it "changes the player's turn" do
-      allow(player1).to receive(:received_attack)
+      allow(player2).to receive(:received_attack)
       game.attack
       expect(game.current_player).to eq player2
     end

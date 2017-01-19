@@ -1,5 +1,5 @@
 class Game
-  attr_reader :players, :attacked, :current_player
+  attr_reader :players, :attacked, :current_player, :other_player
 
   def initialize(player1, player2)
     @players = [player1, player2]
@@ -8,21 +8,21 @@ class Game
   end
 
   def player1
-    players.first.name
+    players.first
   end
 
   def player2
-    players.last.name
+    players.last
   end
 
   def attack
     @attacked = true
-    players.select { |player| player != current_player }.received_attack
+    other_player.received_attack
     change_turn
   end
 
   def change_turn
-    current_player == player1 ? @current_player = player2 : @current_player = player1
+    @current_player,@other_player = @other_player,@current_player
   end
 
 end
