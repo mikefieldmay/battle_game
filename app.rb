@@ -25,7 +25,7 @@ enable :sessions
 
   post '/attack' do
     @game = $game
-    @game.attack(@game.player2)
+    @game.attack
     redirect "/play"
   end
 

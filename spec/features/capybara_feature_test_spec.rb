@@ -35,4 +35,11 @@ RSpec.feature "Capybara feature test" do
     expect(page).to have_content "Konrad's turn"
   end
 
+  scenario "attacks cause 10HP damage" do
+    attack
+    expect(page).to have_content "Konrad HP: 10"
+    click_button "Attack"
+      expect(page).to have_content "Kate HP: 10"
+  end
+
 end

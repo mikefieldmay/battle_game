@@ -14,5 +14,4 @@ def attack
   sign_in_and_play
   click_button "Attack"
 
-
 end
