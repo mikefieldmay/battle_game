@@ -6,7 +6,6 @@ require './lib/game'
 class Battle < Sinatra::Base
 
 enable :sessions
-
   get '/' do
 
     erb :index
@@ -20,16 +19,13 @@ enable :sessions
   end
 
   get '/play' do
-    @name1 = $game.player1.name
-    @name2 = $game.player2.name
-    @attack = session[:attack]
-    @confirmation ="#{@name1} attacks #{@name2}"
+    @game = $game
     erb :names
   end
 
   post '/attack' do
-    $game.attack($game.player2)
-    session[:attack] = true
+    @game = $game
+    @game.attack(@game.player2)
     redirect "/play"
   end
 

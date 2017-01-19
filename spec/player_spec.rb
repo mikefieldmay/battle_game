@@ -17,9 +17,9 @@ describe Player do
   end
 
   describe "#attacked" do
-    it {is_expected.to respond_to(:attacked)}
+    it {is_expected.to respond_to(:received_attack)}
     it "reduces HP by 10" do
-      expect{dave.attacked}.to change{dave.hit_points}.by(-10)
+      expect{dave.received_attack}.to change{dave.hit_points}.by(-10)
     end
   end
 

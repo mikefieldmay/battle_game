@@ -1,11 +1,11 @@
-<% if @name1 && @name2 %>
-<h1>First player: <%=@name1%>; second player: <%=@name2%></h1>
-<h1><%=@name1%> HP: <%=$game.player1.hit_points%>, <%=@name2%> HP: <%=$game.player2.hit_points%> </h1>
+<% if @game.player1.name && @game.player2.name %>
+<h1>First player: <%=@game.player1.name%>; second player: <%=@game.player2.name%></h1>
+<h1><%=@game.player1.name%> HP: <%=@game.player1.hit_points%>, <%=@game.player2.name%> HP: <%=@game.player2.hit_points%> </h1>
 <!-- <button type="button" onclick="<%=@confirmation%>">Attack</button> -->
 <form action="/attack" method="post">
   <input type = "submit" value = "Attack!"/>
 </form>
-  <% if @attack == true %>
-  <h2><%=@name1%> attacked <%=@name2%></h2>
+  <% if @game.attacked == true %>
+  <h2><%=@game.player1.name%> attacked <%=@game.player2.name%></h2>
   <% end %>
 <% end %>

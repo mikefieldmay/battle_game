@@ -14,8 +14,12 @@ describe Game do
     it {is_expected.to respond_to(:attack).with(1).argument}
 
     it "causes HP damage to a player" do
-      expect(player1).to receive(:attacked)
+      expect(player1).to receive(:received_attack)
       game.attack(player1)
     end
+  end
+
+  describe "#change_turn" do
+    it {is_expected.to respond_to(:change_turn)}
   end
 end
