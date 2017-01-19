@@ -26,5 +26,4 @@ RSpec.feature "Capybara feature test" do
     expect(page). to have_content "Konrad HP: 10"
   end
 
-
 end
