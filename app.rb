@@ -26,7 +26,13 @@ enable :sessions
   post '/attack' do
     @game = $game
     @game.attack
-    redirect "/play"
+    redirect "/play" unless @game.game_over?
+    redirect "/game_over"
+  end
+
+  get '/game_over' do
+    @game = $game
+    erb :game_over
   end
 
   # start the server if ruby file executed directly

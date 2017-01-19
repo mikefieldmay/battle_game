@@ -24,4 +24,8 @@ class Game
     @current_player,@opponent = @opponent,@current_player
   end
 
+  def game_over?
+    player1.hit_points == 0 || player2.hit_points == 0
+  end
+
 end

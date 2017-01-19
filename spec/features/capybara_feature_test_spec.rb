@@ -41,4 +41,10 @@ RSpec.feature "Capybara feature test" do
       expect(page).to have_content "Kate HP: 10"
   end
 
+  scenario "when my HP reaches 0, I see a lose message" do
+    attack
+    2.times {click_button "Attack"}
+    expect(page).to have_content "GAME OVER: Kate Wins!"
+  end
+
 end

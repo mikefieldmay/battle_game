@@ -27,4 +27,8 @@ describe Game do
   describe "#change_turn" do
     it {is_expected.to respond_to(:change_turn)}
   end
+
+  describe "#game_over?" do
+    it {is_expected.to respond_to(:game_over?)}
+  end
 end
