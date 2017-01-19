@@ -21,5 +21,10 @@ RSpec.feature "Capybara feature test" do
 
   end
 
+  scenario "attacks cause 10HP damage" do
+    attack
+    expect(page). to have_content "10HP"
+  end
+
 
 end

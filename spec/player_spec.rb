@@ -2,16 +2,18 @@ require 'player'
 
 describe Player do
 
-  subject(:player) {described_class.new(:name)}
-  let(:name) {double "name"}
+  subject(:dave) {described_class.new("Dave")}
 
-  describe "#name" do
+  describe "#default" do
     it "is expected to respond to name" do
       is_expected.to respond_to(:name)
     end
     it "returns the name" do
-      expect(player.name).to eq(:name)
+      expect(dave.name).to eq("Dave")
     end
-
+    it "initializes with 20HP" do
+      expect(dave.hit_points).to eq 20
+    end
   end
+
 end
