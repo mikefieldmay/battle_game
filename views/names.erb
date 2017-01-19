@@ -1,6 +1,6 @@
 <% if @name1 && @name2 %>
 <h1>First player: <%=@name1%>; second player: <%=@name2%></h1>
-<h1><%=@name1%> HP: <%=$player1.hit_points%>, <%=@name2%> HP: <%=$player1.hit_points%> </h1>
+<h1><%=@name1%> HP: <%=$player1.hit_points%>, <%=@name2%> HP: <%=$player2.hit_points%> </h1>
 <!-- <button type="button" onclick="<%=@confirmation%>">Attack</button> -->
 <form action="/attack" method="post">
   <input type = "submit" value = "Attack!"/>
